@@ -1,8 +1,10 @@
 import pymongo
 import os
 from os import path
-if path.exists("env.py"):
+if path.exists('env.py'):
     import env
+
+app = Flask(__name__)
 
 app.config['MONGO_URI'] = os.environ.get('MONGO_URI')
 app.config['MONGODB_NAME'] = os.environ.get('MONGODB_NAME')
